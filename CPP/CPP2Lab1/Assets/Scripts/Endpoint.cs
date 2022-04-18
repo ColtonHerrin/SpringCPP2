@@ -20,11 +20,12 @@ public class Endpoint : GameManager
         }
     }
 
-    private void OnCollisionEnter(Collision gameObjectInformation)
+    private void OnTriggerEnter(Collider other)
     {
-        if (gameObjectInformation.gameObject.name == "Player")
+        if (other.gameObject.tag == "Player")
         {
-            Application.Quit();
+            Debug.Log("Game Ended");
         }
     }
+    
 }
