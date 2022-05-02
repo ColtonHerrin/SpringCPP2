@@ -7,6 +7,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     CharacterController controller;
+    Fire playerFire;
 
     [Header("Player Settings")]
     [Space(2)]
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour
         try
         {
             controller = GetComponent<CharacterController>();
+            playerFire = GetComponent<Fire>();
             controller.minMoveDistance = 0.0f;
 
             if (speed <= 0)
@@ -103,6 +105,7 @@ public class Player : MonoBehaviour
     void Fire()
     {
         Debug.Log("pew pew pew");
+        playerFire.FireProjectile();
     }
 
     [ContextMenu("Reset Stats")]
